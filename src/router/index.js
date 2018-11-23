@@ -28,6 +28,16 @@ const routerOptions = [
     meta: {requiresAuth: true}
   },
   {
+    path: '/Selectcartoon',
+    component: 'Selectcartoon',
+    meta: {requiresAuth: true}
+  },
+  {
+    path: '/watchcartoon',
+    component: 'watchcartoon',
+    meta: {requiresAuth: true}
+  },
+  {
     path: '/',
     component: 'Home',
     meta: {requiresAuth: true}
