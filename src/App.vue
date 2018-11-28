@@ -1,34 +1,48 @@
-<template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Cartoon 3 ช่อง</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-      >
-        <span class="mr-2">Watch Cartoon</span>
-      </v-btn>
-    </v-toolbar>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+
+<template>
+
+<v-app>
+
+<Navbar />
+  <v-content>
+
+  <div id="app">
+  <img alt="Vue logo" src="./assets/1234.png"width="640" height="5%" >
+  <router-view>
+  </router-view>
+
+  </div>
+  </v-content>
+
+
+
+
+
+</v-app>
+
+
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Navbar from '@/components/Navbar'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
-    return {
-      //
-    }
-  }
+  name: 'app',
+  components:{ Navbar},
+
 }
 </script>
+
+<style >
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
+
+}
+</style>

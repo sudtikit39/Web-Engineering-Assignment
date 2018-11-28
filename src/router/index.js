@@ -1,78 +1,30 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import firebase from 'firebase'
+import VueRouter from 'vue-router'
+import BoardList from '@/components/BoardList'
+import ShowBoard from '@/components/ShowBoard'
+import AddBoard from '@/components/AddBoard'
+import EditBoard from '@/components/EditBoard'
 
-Vue.use(Router)
-
-const routerOptions = [
-  {
-    path: '/signup',
-    component: 'SignUp'
-  },
-  {
-    path: '/Game',
-    component: 'Game'
-  },
-  {
-    path: '/signin',
-    component: 'SignIn'
-  },
-  {
-    path: '/Home',
-    component: 'Home',
-    meta: {requiresAuth: true}
-  },
-  {
-    path: '/Members',
-    component: 'Members',
-    meta: {requiresAuth: true}
-  },
-  {
-    path: '/Selectcartoon',
-    component: 'Selectcartoon',
-    meta: {requiresAuth: true}
-  },
-  {
-    path: '/watchcartoon',
-    component: 'watchcartoon',
-    meta: {requiresAuth: true}
-  },
-  {
-    path: '/',
-    component: 'Home',
-    meta: {requiresAuth: true}
-  }
-]
-
-const routes = routerOptions.map(route => {
-  return {
-    path: route.path,
-    component: () => import (`@/components/${route.component}.vue`),
-    meta: route.meta
-  }
-})
-
-const router = new Router({
-  mode: 'history',
+export default new VueRouter({
   routes: [
-    ...routes, {
-      path: '*',
-      redirect: '/'
+    {
+      path: '/',
+      name: 'BoardList',
+      component: BoardList
+    },
+    {
+      path: '/show-board/:id',
+      name: 'ShowBoard',
+      component: ShowBoard
+    },
+    {
+      path: '/add-board',
+      name: 'AddBoard',
+      component: AddBoard
+    },
+    {
+      path: '/edit-board/:id',
+      name: 'EditBoard',
+      component: EditBoard
     }
   ]
 })
-
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to
-    .matched
-    .some(record => record.meta.requiresAuth)
-  const user = firebase
-    .auth()
-    .currentUser
-  if (requiresAuth && !user) {
-    next('/signin')
-  }
-  next()
-})
-
-export default router
