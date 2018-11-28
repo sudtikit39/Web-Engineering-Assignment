@@ -1,29 +1,28 @@
-# watchcartoon3
+# Vue 3 Firebase Tutorial: Build Firestore CRUD Web Application
+
+This source code is part of [Vue 3 Firebase Tutorial: Build Firestore CRUD Web Application](https://www.djamware.com/post/5bc9313680aca7466989441e/vue-3-firebase-tutorial-build-firestore-crud-web-application) tutorial.
 
 ## Project setup
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn run serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn run build
 ```
 
 ### Run your tests
 ```
-npm run test
+yarn run test
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
