@@ -24,7 +24,7 @@
           <div>
 
 
-            <v-btn color="red" dark> <b-link href="#/">Logout</b-link>
+            <v-btn color="red" dark> <b-link href="#/Members">Member</b-link>
               <v-icon dark right>exit_to_app  </v-icon>
             </v-btn>
 

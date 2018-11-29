@@ -7,26 +7,29 @@
      <h1 align='center'></h1> 
     <table align="center">
     <tr>
-      <th>
-          <img src="@/assets/beam.png" width="300" height="300"/>
-      </th>
-      <th><img src="@/assets/ju.png" align='center'  width="300" height="300"/></th>
-      <th><img src="@/assets/boom.jpg" align='center'  width="300" height="300"/></th>
+      
+          
       </tr>
       <tr>
-      <td>นาย วรรธนัย ศิริรักษ์  </td>
-      <td>นาย ไวชยันต์ นุ้ยสวี  </td>
-      <td>นาย สุทธิกิจ เจริญวงศ์กิจ </td>
+      <td> นาย วรรธนัย ศิริรักษ์-.-  </td>
+      <td> นาย ไวชยันต์ นุ้ยสวี-.-   </td>
+      <td> นาย สุทธิกิจ เจริญวงศ์กิจ-.-  </td>
+      <td> นาย ชรินทร์ เอี้ยวซิโป-.-  </td>
+      <td> นาย นวพันธ์ บุญมาศ  </td>
         </tr>
         <tr>
         <td>5810110298</td>
         <td>5810110316</td>
         <td>5810110353</td>
+        <td>5810110068</td>
+        <td>5810110592</td>
         </tr>
          <tr>
         <td>Database</td>
         <td>หัวหน้ากลุ่ม </td>
         <td>Github&cordova</td>
+        <td>UI&UX</td>
+        <td>tester</td>
         </tr>
        </table>  
        <br/>
