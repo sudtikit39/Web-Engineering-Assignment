@@ -1,0 +1,4 @@
+#Fri Nov 30 15:30:42 ICT 2018
+base.0=C\:\\Users\\Computer\\Desktop\\assignment3\\hybrid-base\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+path.0=classes.dex
+renamed.0=classes.dex

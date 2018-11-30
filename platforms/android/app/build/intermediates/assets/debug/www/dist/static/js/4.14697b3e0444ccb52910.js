@@ -1,0 +1,2 @@
+webpackJsonp([4],{mzkE:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l={render:function(){var e=this.$createElement,t=this._self._c||e;return t("v-footer",{staticClass:"pa-3"},[t("v-spacer"),this._v(" "),t("div",[this._v("© "+this._s((new Date).getFullYear()))])],1)},staticRenderFns:[]},n=s("VU/8")(null,l,!1,null,null,null);t.default=n.exports}});
+//# sourceMappingURL=4.14697b3e0444ccb52910.js.map
