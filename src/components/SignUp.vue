@@ -1,9 +1,3 @@
-<Script>
-
-
-
-</Script>
-
 <template>
   <v-layout column>
     <v-flex xs12 class="text-xs-center" mt-5>
@@ -13,12 +7,9 @@
       <form @submit.prevent="userSignUp">
         <v-layout column>
           <v-flex>
-            <v-alert error dismissible v-model="alert">
-              {{ error }}
-            </v-alert>
           </v-flex>
           <v-flex class="text-xs-center">
-            <v-btn @click="signup()"> Sign in With Facebook</v-btn>
+            <v-btn @click="signin()"> Signin With Facebook</v-btn>
           </v-flex>
           <v-flex>
             <v-text-field
@@ -49,7 +40,7 @@
             ></v-text-field>
           </v-flex>
           <v-flex class="text-xs-center" mt-5>
-            <v-btn primary type="submit" :disabled="loading">Sign Up</v-btn>
+            <v-btn primary type="submit">Sign Up</v-btn>
           </v-flex>
         </v-layout>
       </form>
@@ -57,43 +48,21 @@
   </v-layout>
 </template>
 
-
 <script>
+
   import router from '../router'
-  import firebase2 from 'firebase'
-  const firebaseConfig2 = {
-    apiKey: "AIzaSyBUi-fUsMC3MmJ6gMC9qdSUjciNvZqDNmI",
-    authDomain: "assignment2-61808.firebaseapp.com",
-    databaseURL: "https://assignment2-61808.firebaseio.com",
-    projectId: "assignment2-61808",
-    storageBucket: "assignment2-61808.appspot.com",
-    messagingSenderId: "1028764225899"
-  
-  }
-  var provider = new firebase2.auth.FacebookAuthProvider();
-  export default {
+  import firebase from 'firebase' 
+  var provider = new firebase.auth.FacebookAuthProvider();
+export default {
     data() {
       return {
         email: '',
         password: '',
-        passwordConfirm: '',
         alert: false
       }
-    },
-    computed: {
-      comparePasswords() {
-        return this.password === this.passwordConfirm ? true : 'Password and confirm password don\'t match'
-      },
-      error() {
-        return this.$store.getters.getError
-      },
-      loading() {
-        return this.$store.getters.getLoading
-      }
-    },
-    methods: {
-      signup(){
-        firebase2.auth().signInWithPopup(provider).then(function(result) {
+    },methods: {
+      signin(){
+        firebase.auth().signInWithPopup(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
           router.push('/')
@@ -108,22 +77,19 @@
         
       },
       userSignUp() {
-        if (this.comparePasswords !== true) {
-          return
-        }
-        this.$store.dispatch('userSignUp', {email: this.email, password: this.password})
-      }
-    },
-    watch: {
-      error(value) {
-        if (value) {
-          this.alert = true
-        }
-      },
-      alert(value) {
-        if (!value) {
-          this.$store.dispatch('setError', null)
-        }
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then(firebaseUser => {
+          router.push('/')
+        })
+        .catch(error => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+        })
       }
     }
   }
